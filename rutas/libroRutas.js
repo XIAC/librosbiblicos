@@ -8,5 +8,4 @@ router.post('/', libroControlador.crearLibro);
 router.put('/:id', libroControlador.actualizarLibro);
 router.delete('/:id', libroControlador.eliminarLibro);
 
-
 module.exports = router;

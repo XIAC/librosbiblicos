@@ -28,4 +28,8 @@ const Versiculo = sequelize.define('versiculos', {
         allowNull : false
     }
 });
+// relacion 1 a 1
+Versiculo.belongsTo(Libro, {foreignKey: 'idLibro', as: 'libros'});
+// relacion 1 a muhcos
+Libro.hasMany(Versiculo, {foreignKey : 'idLibro', as: 'versiculos'})
 module.exports = Versiculo;

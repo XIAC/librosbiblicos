@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const versiculoControlador = require('../controlador/versiculoControlador');
+const versiculoControlador = require('../controllers/versiculoControlador');
 router.get('/', versiculoControlador.getTodosLosVersiculos);
 // CONSULTAS - REPORTES
 // BUSCAR VERSICULOS DE UN LIBRO : NUMEROS

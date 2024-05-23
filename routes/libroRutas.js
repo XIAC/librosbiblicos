@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const libroControlador = require('../controlador/libroControlador');
+const libroControlador = require('../controllers/libroControlador');
 router.get('/busqueda', libroControlador.buscarLibro);
 router.get('/', libroControlador.getTodosLosLibros);
 router.get('/:id', libroControlador.getLibroPorId);

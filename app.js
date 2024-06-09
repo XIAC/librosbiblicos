@@ -10,7 +10,7 @@ const authRutas = require('./routes/authRutas');
 const app = express();
 //Configuracion de vistas
 app.set('view engine', 'ejs');
-app.set('views', __dirname, '/views');
+app.set('views', __dirname + '/views'); //fixed
 //-----------configuraciones del cors
 const corsOption = {
     origin: '*',
@@ -39,7 +39,7 @@ passportConfig(passport);
 //Rutas
 // NOTAS: verificar dirnmae_no estair funcionado en este nivel
 app.get('/', function(req, res) {
-    res.render('views/index');
+    res.render('index'); //fixed
 });
 app.use('/auth', authRutas);
 app.use('/api/libros', libroRutas);

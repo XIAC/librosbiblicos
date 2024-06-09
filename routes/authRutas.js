@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const authControlador = require('../controllers/authControlador');
+router.get('/verregistro', (req, res) => {
+    res.render('registro');
+});
 // router.get('/', authControlador.bienvenida);
-router.get('/registro', authControlador.registroUsuario);
+router.post('/registro', authControlador.registroUsuario);
 router.post('/inicio-sesion', authControlador.inicioSesion);
 router.post('/cierre-sesion', authControlador.cierreSesion);
 module.exports = router;

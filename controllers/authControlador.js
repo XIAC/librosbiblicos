@@ -2,22 +2,23 @@ const { User } =  require('../models');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
+
+
 exports.registroUsuario = async ( req, res) => {
+    // console.log(req.body);
+
         const {username, password} = req.body;
-        console.log(req.body);
         const contrasenaEncriptada =  await bcrypt.hash(password, 10);
         try {
             console.log(req.body);
             const usuarioCreado = await User.create({ username, password: contrasenaEncriptada });
-            console.log(usuarioCreado);
+            console.log("USUARIO CREADO",usuarioCreado);
             // res.status(201).send('usuario creado');
-            
+            res.render('registro');
         } catch(error){
             console.log(error);
             res.status(400).send('Error al crear usuario');
         }
-
-        res.render('views/registro');
     };
 
 exports.inicioSesion =  async (req, res , next) =>{

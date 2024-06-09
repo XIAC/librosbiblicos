@@ -6,7 +6,10 @@ const Seq =  require('sequelize');
 exports.getTodosLosVersiculos = async (peticion, respuesta) => {
     try {
         const versiculos = await  Versiculo.findAll();
-        respuesta.json(versiculos);
+        console.log(versiculos);
+        respuesta.render('versiculos', { versiculos : versiculos});
+
+        // respuesta.json(versiculos);
     } 
     catch (error) {
         console.log(error);
